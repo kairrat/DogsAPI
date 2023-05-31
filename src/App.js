@@ -45,28 +45,28 @@ const [selectedImage, setSelectedImage] = useState(null);
     {
       field: 'name',
       headerName: 'Name',
-      width: 380,
+      flex : 1,
       headerClassName: 'name-header',
       cellClassName: 'name-cell',
     },
     {
       field: 'life_span',
       headerName: 'Life Cycle',
-      width: 380,
+      flex : 1,
       headerClassName: 'life-span-header',
       cellClassName: 'life-span-cell',
     },
     {
       field: 'temperament',
       headerName: 'temperament',
-      width: 380,
+      flex : 1,
       headerClassName: 'temperament-header',
       cellClassName: 'temperament-cell',
     },
     {
       field: 'image',
       headerName: 'Photo',
-      width: 380,
+      flex : 1,
       headerClassName: 'image-header',
       cellClassName: 'image-cell',
       renderCell: (params) => (
@@ -74,7 +74,7 @@ const [selectedImage, setSelectedImage] = useState(null);
       <img
         src={params.value.url}
         alt="Dog"
-        style={{ width: 380, height: 250, objectFit: 'cover', cursor: 'pointer' }}
+        style={{       flex : 1, objectFit: 'cover', cursor: 'pointer' }}
       />
     </div>
       ),
