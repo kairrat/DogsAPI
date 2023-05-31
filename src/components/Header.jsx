@@ -12,13 +12,8 @@ const Header = () => {
   };
 
   return (
-<<<<<<< HEAD
     <AppBar sx={{ height: '80px', backgroundColor: 'purple', position : 'static' }}>
       <Grid container justifyContent="space-between" alignItems="center" sx={{ height: '100%'}} >
-=======
-    <AppBar>
-      <Grid container justifyContent="space-between" alignItems="center">
->>>>>>> 9e54bb7b262fcd7685f3531e4dcddf0eb10b8422
         <Grid item>
           <Typography>
             React-Dog-Test-Project
@@ -26,6 +21,7 @@ const Header = () => {
         </Grid>
 
         <Grid item>
+            
           <Typography>
             Dark Mode
             <Switch

@@ -1,24 +1,18 @@
-<<<<<<< HEAD
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Header from './components/Header';
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, Stack, ThemeProvider } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import { fetchData } from './api/fetchDogs';
-=======
-import { useSelector } from 'react-redux';
-import './App.css';
-import Header from './components/Header';
-import { createTheme, ThemeProvider } from '@mui/material';
->>>>>>> 9e54bb7b262fcd7685f3531e4dcddf0eb10b8422
+import LoadingButton from '@mui/lab/LoadingButton';
+
 
 
 
 function App() {
   const isDarkMode = useSelector((state) => state.darkMode);
 
-<<<<<<< HEAD
   const [modalOpen, setModalOpen] = useState(false);
 const [selectedImage, setSelectedImage] = useState(null);
 
@@ -43,34 +37,36 @@ const [selectedImage, setSelectedImage] = useState(null);
 
   };
 
+  
+
 
 
   const columns = [
     {
       field: 'name',
       headerName: 'Name',
-      width: 400,
+      width: 380,
       headerClassName: 'name-header',
       cellClassName: 'name-cell',
     },
     {
       field: 'life_span',
       headerName: 'Life Cycle',
-      width: 400,
+      width: 380,
       headerClassName: 'life-span-header',
       cellClassName: 'life-span-cell',
     },
     {
       field: 'temperament',
       headerName: 'temperament',
-      width: 400,
+      width: 380,
       headerClassName: 'temperament-header',
       cellClassName: 'temperament-cell',
     },
     {
       field: 'image',
       headerName: 'Photo',
-      width: 400,
+      width: 380,
       headerClassName: 'image-header',
       cellClassName: 'image-cell',
       renderCell: (params) => (
@@ -78,7 +74,7 @@ const [selectedImage, setSelectedImage] = useState(null);
       <img
         src={params.value.url}
         alt="Dog"
-        style={{ width: 200, height: 300, objectFit: 'scale-down', cursor: 'pointer' }}
+        style={{ width: 380, height: 250, objectFit: 'cover', cursor: 'pointer' }}
       />
     </div>
       ),
@@ -87,7 +83,17 @@ const [selectedImage, setSelectedImage] = useState(null);
 
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    <Stack direction="row" spacing={2}>
+  
+  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" , width :'100%' }}>
+  <LoadingButton     style={{ width: "200px", height: "60px", fontSize: 62, border: 'none' }}
+ loading variant="outlined">
+    Submit
+  </LoadingButton>
+</div>
+
+  </Stack>
+
   }
 
   if (status === 'failed') {
@@ -116,20 +122,12 @@ const [selectedImage, setSelectedImage] = useState(null);
   });
   
 
-=======
-  const theme = createTheme({
-    palette: {
-      mode: isDarkMode ? 'dark' : 'light',
-    },
-    // Other theme configurations...
-  });
->>>>>>> 9e54bb7b262fcd7685f3531e4dcddf0eb10b8422
   return (
+
 
     <div className="App">
           <Header/>
     <ThemeProvider theme={theme}>
-<<<<<<< HEAD
     <DataGrid rows={rows} columns={columns} pageSize={5}                 />
 
     </ThemeProvider>
@@ -141,10 +139,6 @@ const [selectedImage, setSelectedImage] = useState(null);
         </div>
       </div>
     )}
-=======
-
-    </ThemeProvider>
->>>>>>> 9e54bb7b262fcd7685f3531e4dcddf0eb10b8422
     </div>
   );
 }
